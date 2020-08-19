@@ -1,5 +1,5 @@
 # Doc-PDF
-Converts a Doc to a PDF and moves them to designated folders
+
 
 #08/19/2020
 #SarahJanieC
