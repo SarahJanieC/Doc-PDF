@@ -19,6 +19,7 @@ $releasePath = [Environment]::GetFolderPath("Desktop") + '\Folder Here'
 
 function PDFcreate()
 {
+
         # Load Applications
         $word = New-Object -ComObject Word.Application
         $word.visible = $false
@@ -31,9 +32,11 @@ function PDFcreate()
 
         foreach($doc in $docs)
         {
+        
             $convert = $word.Documents.Open($doc.Fullname)
             $pdf = ($convert.Fullname).replace("docx","pdf")
             $convert.SaveAs($pdf,17)
+            
         }
 
         $word.quit()
@@ -46,16 +49,19 @@ function PDFcreate()
 
 function PDFmove()
 {
+
         ### Gets the most recent pdf files in the folder specified by $docPath
         $pdfdocs = Get-ChildItem -Path $docPath | 
                     Where-Object {$_.Extension -like ".pdf" } |
                     Sort-Object LastWriteTime -Descending |
                     Select-Object -first 10
+                    
 
          foreach($pdfdoc in $pdfdocs)
          {
             Move-Item -Path $pdfdoc.fullname -Destination $releasePath
          }
+         
 }
 
 #Deletes DOCs from folder after converting them to PDFs
