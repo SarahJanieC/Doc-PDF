@@ -1,5 +1,8 @@
 # Doc-PDF
 
+#Purpose:  Converts the DOC into a PDF and sends it to outbound folder.
+#Finally, the program removes DOC files from inbound folder
+
 
 #08/19/2020
 #SarahJanieC
