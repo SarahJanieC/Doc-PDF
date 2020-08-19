@@ -2,14 +2,11 @@
 Converts a Doc to a PDF and moves them to designated folders
 
 
-# 08/19/2020
-#
-# SarahJanieC
-#
-#
-#
-# Purpose:  Converts the DOC into a PDF and sends it to outbound folder.
-#           Finally, the program removes DOC files from inbound folder
+#08/19/2020
+#SarahJanieC
+
+#Purpose:  Converts the DOC into a PDF and sends it to outbound folder.
+#Finally, the program removes DOC files from inbound folder
 
 
 #Set Folder Paths
@@ -17,7 +14,7 @@ $docPath = [Environment]::GetFolderPath("Desktop") + '\Folder Here'
 $releasePath = [Environment]::GetFolderPath("Desktop") + '\Folder Here'
 
 
-# Convert DOC to PDF
+#Convert DOC to PDF
 function PDFcreate()
 {
         # Load Applications
@@ -43,7 +40,7 @@ function PDFcreate()
         Stop-Process -Name "winword"
 }
 
-# Moves PDFs to new folder
+#Moves PDFs to new folder
 function PDFmove()
 {
         ### Gets the most recent pdf files in the folder specified by $docPath
@@ -58,7 +55,7 @@ function PDFmove()
          }
 }
 
-# Deletes DOCs from folder after converting them to PDFs
+#Deletes DOCs from folder after converting them to PDFs
 function Cleanse()
 {
          foreach($doc in $docs)
