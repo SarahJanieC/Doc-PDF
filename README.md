@@ -10,11 +10,13 @@
 
 
 #Set Folder Paths
+
 $docPath = [Environment]::GetFolderPath("Desktop") + '\Folder Here'
 $releasePath = [Environment]::GetFolderPath("Desktop") + '\Folder Here'
 
 
 #Convert DOC to PDF
+
 function PDFcreate()
 {
         # Load Applications
@@ -41,6 +43,7 @@ function PDFcreate()
 }
 
 #Moves PDFs to new folder
+
 function PDFmove()
 {
         ### Gets the most recent pdf files in the folder specified by $docPath
@@ -56,6 +59,7 @@ function PDFmove()
 }
 
 #Deletes DOCs from folder after converting them to PDFs
+
 function Cleanse()
 {
          foreach($doc in $docs)
