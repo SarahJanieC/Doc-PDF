@@ -62,9 +62,11 @@ function PDFmove()
 
 function Cleanse()
 {
+
          foreach($doc in $docs)
          {
-            Remove-Item -Path $doc.FullName
+                Remove-Item -Path $doc.FullName
          }
+         
 
 }
